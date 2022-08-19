@@ -6,7 +6,26 @@ import shutil
 
 def main(input_folder, output_folder):
     
+    if not os.path.exists(output_folder):
+  
+        os.makedirs(output_folder)
+        os.makedirs(f'{output_folder}/images')
 
+    annnotation_file = open(f'{output_folder}/ann.csv', 'w')
+    writer = csv.writer(annnotation_file)
+
+    for file in glob.glob(f'{input_folder}/positive/*'):
+        dest = file.split('/')[-1]
+        
+        writer.writerow([f'positive_{dest}', 'true'])
+        shutil.copy(file, f'{output_folder}/images/positive_{dest}')
+    
+    for file in glob.glob(f'{input_folder}/negative/*'):
+        dest = file.split('/')[-1]
+
+        writer.writerow([f'negative_{dest}', 'false'])
+        shutil.copy(file, f'{output_folder}/images/negative_{dest}')
+    
 
 if __name__ == "__main__":
     
