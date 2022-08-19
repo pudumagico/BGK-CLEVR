@@ -7,10 +7,13 @@ Furthermore, a neural network model is provided to test the capacity of neural a
 # Installation
 
 Clone this repository:
+
 `git clone https://github.com/pudumagico/BGK-CLEVR.git`
 
 Create an environment with all packages from requirements.txt
+
 `conda create --name bkg-clevr -c potassco conda-forge pytorch --file requirements.txt`
+
 `source activate bkg-clevr`
 
 # Use
@@ -28,9 +31,11 @@ This constraint comes with is counterpart, which says that at least two objects 
 This will come in handy when we want to generate positive and negative examples.
 
 Concretely, use the following code to generate the positive and negative answer sets:
+
 `clingo main_encoding.lp constraints/horizontal_shape.lp -c c=1 10 > asp_models/horizontal_shape_positive.txt`
 
 `clingo main_encoding.lp constraints/horizontal_shape.lp -c c=0 10 > asp_models/horizontal_shape_negative.txt`
+
 Where the constant `c` enforces the positive contraint when is equal to 1 and enforces the negative constraint when is equal to 0.
 
 ## Creating a dataset
