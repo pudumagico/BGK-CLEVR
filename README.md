@@ -29,6 +29,7 @@ This will come in handy when we want to generate positive and negative examples.
 
 Concretely, use the following code to generate the positive and negative answer sets:
 `clingo main_encoding.lp constraints/horizontal_shape.lp -c c=1 10 > asp_models/horizontal_shape_positive.txt`
+
 `clingo main_encoding.lp constraints/horizontal_shape.lp -c c=0 10 > asp_models/horizontal_shape_negative.txt`
 Where the constant `c` enforces the positive contraint when is equal to 1 and enforces the negative constraint when is equal to 0.
 
@@ -37,6 +38,7 @@ Where the constant `c` enforces the positive contraint when is equal to 1 and en
 To generate use the following code
 
 `python generate_images.py -i asp_models/horizontal_shape_positive.txt -o ./images/horizontal_shape/positive -gs 3`
+
 `python generate_images.py -i asp_models/horizontal_shape_negative.txt -o ./images/horizontal_shape/negative -gs 3`
 
 Where `-i` takes a text file with the answer sets inn it, `-o` is the output folder for the images and `-gs` is the grid size.
