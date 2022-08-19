@@ -59,3 +59,13 @@ For this use the following command:
 
 `python train_and_test.py -d datasets/horizontal_color`
  
+
+ # TODO
+
+ 1. Use xorro to generate the images. 
+ At the moment I can use it but I am still learning how to use the parity constraints.
+ The sampling mode takes too much time so it may be needed to encode the parity constraints by hand.
+
+ 2. Use a proper neural network for the training and testing.
+
+ 3. Come up with more constraints.
