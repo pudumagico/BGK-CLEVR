@@ -12,9 +12,14 @@ Clone this repository:
 
 Create an environment with all packages from requirements.txt
 
-`conda create --name bkg-clevr -c potassco conda-forge pytorch --file requirements.txt`
+`conda create --name bkg-clevr -c potassco -c conda-forge --file requirements.txt`
 
-`source activate bkg-clevr`
+`conda activate bkg-clevr`
+
+## Installing xorro
+
+Generating models is possible using clingo or xorro.
+Refer to the installation of xorro in [xorro's github page](https://github.com/potassco/xorro.)
 
 # Use
 
@@ -31,6 +36,8 @@ This constraint comes with is counterpart, which says that at least two objects 
 This will come in handy when we want to generate positive and negative examples.
 
 Concretely, use the following code to generate the positive and negative answer sets:
+
+`mkdir asp_models`
 
 `clingo main_encoding.lp constraints/horizontal_shape.lp -c c=1 10 > asp_models/horizontal_shape_positive.txt`
 
