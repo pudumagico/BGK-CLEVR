@@ -1,1 +1,6 @@
-/dataset
+*.png
+/asp_models
+/datasets
+/examples
+*.pt
+

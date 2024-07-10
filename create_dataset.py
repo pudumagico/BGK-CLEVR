@@ -17,15 +17,25 @@ def main(input_folder, output_folder):
     for file in glob.glob(f'{input_folder}/positive/*'):
         dest = file.split('/')[-1]
         
-        writer.writerow([f'positive_{dest}', 'true'])
+        writer.writerow([f'positive_{dest}', 1])
         shutil.copy(file, f'{output_folder}/images/positive_{dest}')
     
     for file in glob.glob(f'{input_folder}/negative/*'):
         dest = file.split('/')[-1]
 
-        writer.writerow([f'negative_{dest}', 'false'])
+        writer.writerow([f'negative_{dest}', 0])
         shutil.copy(file, f'{output_folder}/images/negative_{dest}')
+
+    # for file in glob.glob(f'{input_folder}/positive/labels/*'):    
+    #     dest = file.split('/')[-1]
+        
+    #     shutil.copy(file, f'{output_folder}/images/labels/positive_{dest}')
     
+    # for file in glob.glob(f'{input_folder}/negative/labels/*'):
+    #     dest = file.split('/')[-1]
+
+    #     shutil.copy(file, f'{output_folder}/images/labels/negative_{dest}')
+
 
 if __name__ == "__main__":
     
