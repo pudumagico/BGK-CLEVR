@@ -1,5 +1,6 @@
 /asp_models
 /datasets
 /examples
+/test_dataset
 *.pt
 

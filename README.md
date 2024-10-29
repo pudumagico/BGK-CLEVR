@@ -1,8 +1,16 @@
-# BGK-CLEVR
+## BGK-CLEVR
 
 BKG-CLEVR is a 2D CLEVR-like dataset generator that uses Answer Set Programming as the engine for generating positive and negative examples.
 These examples are divided between those who satisfy a given constraints and those who do not.
 Furthermore, a neural network model is provided to test the capacity of neural approaches to learn the aforementioned constraint.
+
+# Quick Use
+
+1. Install the requirements in requirements.txt.
+2. Use dataset/unified_generation.py or dataset/unified_generation_asp.py to generate images. They will be contained in a folder called test_dataset.
+3. Use utils/split_dataset_binary, split_dataset_odc.py and yolosify.py to split the image into training and validation sets.
+4. Use a models/binary_classification.py to train a binary classifier, or obj_detect_classification for training object detection and classification.
+<!-- 
 
 # Installation
 
@@ -12,9 +20,9 @@ Clone this repository:
 
 Create an environment with all packages from requirements.txt
 
-`conda create --name bkg-clevr -c potassco -c conda-forge --file requirements.txt`
+`conda create --name bgk-clevr -c potassco -c conda-forge --file requirements.txt`
 
-`conda activate bkg-clevr`
+`conda activate bgk-clevr`
 
 ## Installing xorro
 
@@ -75,4 +83,4 @@ For this use the following command:
 
  2. Use a proper neural network for the training and testing.
 
- 3. Come up with more constraints.
+ 3. Come up with more constraints. -->

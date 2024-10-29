@@ -851,10 +851,11 @@ grid_size = 3
 constraints = ["no_adjacent_same_shape"]  # List of constraints
 constraint_flags = [1]  # Set to 1 to follow the constraint, 0 to break the constraint
 existing_models = set()
+n_images = 1000
 
 # Generate multiple models
 positive_models = []
-for i, _ in enumerate(tqdm(range(10))):
+for i, _ in enumerate(tqdm(n_images)):
     model_str = generate_uniform_model(grid_size, constraints, constraint_flags, existing_models)
     print(model_str)
     # print(model_str)
@@ -872,7 +873,7 @@ torch.save(positive_tensor, './test_dataset/1/matrices.pt')
 existing_models = set()
 constraint_flags = [0]  # Now generate models that break the constraint
 negative_models = []
-for i, _ in enumerate(tqdm(range(10))):
+for i, _ in enumerate(tqdm(n_images)):
     model_str = generate_uniform_model(grid_size, constraints, constraint_flags, existing_models)
     # print(model_str)
     negative_models.append(model_str)
