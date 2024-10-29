@@ -151,7 +151,7 @@ DIFF = 0.35
 
 def gen_image(i, model, grid_size, output_folder, grid_move):
 
-    image_folder = f"/home/nhiguera/Research/cclevr/pollock/{grid_size}"
+    image_folder = f"pollock/{grid_size}"
 
     image_files = [f for f in os.listdir(image_folder) if os.path.isfile(os.path.join(image_folder, f))]
 
